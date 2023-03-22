@@ -1,0 +1,1 @@
+python evaluate_model.py --model-dir <pretrained-model-dir> --model-name <model-name> --test-dir <test-dir-name> --model-type <screw, l2, noLSTM, 2imgs> --output-dir <output-dir>

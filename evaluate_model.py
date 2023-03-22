@@ -197,7 +197,7 @@ if __name__ == "__main__":
             best_model = ScrewNet(lstm_hidden_dim=1000, n_lstm_hidden_layers=1, n_output=8)
             testset = ArticulationDataset(args.ntest, args.test_dir)
 
-        best_model.load_state_dict(torch.load(os.path.join(args.model_dir, args.model_name + '.net')))
+        best_model.load_state_dict(torch.load(os.path.join(args.model_dir, args.model_name + '.net'), map_location=torch.device("cpu")))
         best_model.float().to(device)
         best_model.eval()
 
