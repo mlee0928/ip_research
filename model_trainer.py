@@ -26,7 +26,7 @@ class ModelTrainer(object):
                  name,
                  test_freq,
                  device,
-                 plots_dir='plots/',
+                 plots_dir='train_plots/',
                  logs_dir='runs/',
                  ndof=1):
 
@@ -46,6 +46,7 @@ class ModelTrainer(object):
         self.tlosses = []
 
         # float model as push to GPU/CPU
+        device = torch.device("cpu")
         self.device = device
         self.model.float().to(self.device)
         self.wts_dir = os.path.join(os.getcwd(), 'models')

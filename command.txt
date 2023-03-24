@@ -4,8 +4,12 @@ sudo apt-get install build-essential -y
 pip install dq3d==0.3.6
 pip install matplotlib
 pip install transforms3d
+pip install tensorboardX
 
 ## Commands
 # Run Eval (Test)
 python evaluate_model.py --model-dir <pretrained-model-dir> --model-name <model-name> --test-dir <test-dir-name> --model-type <screw, noLSTM, 2imgs, l2, baseline> --output-dir <output-dir>
 python evaluate_model.py --model-dir trained_wts --model-name nnv1_partnet_combined_2imgs --test-dir test_dataset/partnet-mobility/dishwasher-test --model-type 2imgs --output-dir plots
+# Run Train 
+python train_model.py --name <model-name> --train-dir <training-dataset-dir> --test-dir <test-dataset-dir> --ntrain <no_of_training_samples> --ntest <no_of_validation_samples> --epochs <no_epochs> --cuda --batch <batch-size> --device 0 --fix-seed
+python train_model.py --name screw --train-dir test_dataset/partnet-mobility/dishwasher-test --test-dir test_dataset/partnet-mobility/microwave-test --ntrain 100 --ntest 20 --epochs 5 --batch 2 --fix-seed 
