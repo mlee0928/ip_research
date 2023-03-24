@@ -1,1 +1,11 @@
+## Installation
+pip install pybind11
+sudo apt-get install build-essential -y
+pip install dq3d==0.3.6
+pip install matplotlib
+pip install transforms3d
+
+## Commands
+# Run Eval (Test)
 python evaluate_model.py --model-dir <pretrained-model-dir> --model-name <model-name> --test-dir <test-dir-name> --model-type <screw, l2, noLSTM, 2imgs> --output-dir <output-dir>
+python evaluate_model.py --model-dir trained_wts --model-name nnv1_partnet_combined_screw --test-dir test_dataset/simulated_articulated_objects/microwave-test --model-type screw --output-dir plots

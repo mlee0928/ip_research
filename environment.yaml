@@ -102,7 +102,6 @@ dependencies:
     - absl-py==0.10.0
     - cachetools==4.1.1
     - chardet==3.0.4
-    - dq3d==0.3.6
     - future==0.18.2
     - google-auth==1.22.1
     - google-auth-oauthlib==0.4.1
