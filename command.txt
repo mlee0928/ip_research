@@ -7,5 +7,5 @@ pip install transforms3d
 
 ## Commands
 # Run Eval (Test)
-python evaluate_model.py --model-dir <pretrained-model-dir> --model-name <model-name> --test-dir <test-dir-name> --model-type <screw, l2, noLSTM, 2imgs> --output-dir <output-dir>
-python evaluate_model.py --model-dir trained_wts --model-name nnv1_partnet_combined_screw --test-dir test_dataset/simulated_articulated_objects/microwave-test --model-type screw --output-dir plots
+python evaluate_model.py --model-dir <pretrained-model-dir> --model-name <model-name> --test-dir <test-dir-name> --model-type <screw, noLSTM, 2imgs, l2, baseline> --output-dir <output-dir>
+python evaluate_model.py --model-dir trained_wts --model-name nnv1_partnet_combined_2imgs --test-dir test_dataset/partnet-mobility/dishwasher-test --model-type 2imgs --output-dir plots

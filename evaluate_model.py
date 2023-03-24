@@ -292,7 +292,11 @@ if __name__ == "__main__":
         fig = plt.figure(41)
         data = copy.copy(all_d_err_mean.numpy()) * 100.
         binwidth = 0.5
-        plt.hist(data, bins=np.arange(0., max(data) + binwidth, binwidth), density=True)
+        if not f'{max(data)}'.isnumeric():
+            max_data = 0
+        else:
+            max_data = max(data)
+        plt.hist(data, bins=np.arange(0., max_data + binwidth, binwidth), density=True)
         percent_scale = 1 / binwidth
         plt.gca().yaxis.set_major_formatter(formatter)
         plt.xlabel("Error (cm)")
